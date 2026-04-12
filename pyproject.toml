@@ -1,0 +1,89 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "sandclaw-memory"
+version = "0.1.0"
+description = "Self-growing tag-dictionary RAG that runs on a $200 laptop."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "kokogo100", email = "kokogo100@users.noreply.github.com" },
+]
+keywords = [
+    "rag",
+    "memory",
+    "llm",
+    "ai-agent",
+    "tag-based-rag",
+    "temporal-rag",
+    "self-growing",
+    "gpu-free",
+    "lightweight",
+    "local-first",
+    "privacy",
+    "sqlite",
+    "zero-dependencies",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/kokogo100/sandclaw-memory"
+Documentation = "https://github.com/kokogo100/sandclaw-memory#readme"
+Repository = "https://github.com/kokogo100/sandclaw-memory"
+Issues = "https://github.com/kokogo100/sandclaw-memory/issues"
+Changelog = "https://github.com/kokogo100/sandclaw-memory/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.8.0",
+    "pyright>=1.1.350",
+    "build>=1.0",
+    "twine>=5.0",
+]
+
+# ═══════════════════════════════════════════════════════════
+# Ruff — fast Python linter & formatter
+# ═══════════════════════════════════════════════════════════
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+
+# ═══════════════════════════════════════════════════════════
+# Pytest
+# ═══════════════════════════════════════════════════════════
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+# ═══════════════════════════════════════════════════════════
+# Pyright — type checking
+# ═══════════════════════════════════════════════════════════
+[tool.pyright]
+pythonVersion = "3.9"
+typeCheckingMode = "basic"
+include = ["sandclaw_memory"]
