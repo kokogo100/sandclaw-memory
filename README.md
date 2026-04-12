@@ -270,3 +270,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
+
+## Origin
+
+This library was born from the multi-layer RAG engine built for [SandClaw](https://github.com/kokogo100/sandclaw) — an AI-powered trading IDE. We extracted and open-sourced the memory system so any developer can use it.
