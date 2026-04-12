@@ -255,14 +255,6 @@ brain.on("after_cycle",    lambda stats: ...)
 - **Dependencies**: None (Python stdlib only)
 - **SQLite**: Uses built-in `sqlite3` module (FTS5 optional, graceful fallback)
 
-## Roadmap
-
-| Version | Codename | Status |
-|---|---|---|
-| v0.1.0 | "Remembering AI" | Current |
-| v0.2.0 | "Growing AI" | Planned -- tag trees + built-in AI (Gemma 4) |
-| v0.3.0 | "Thinking AI" | Planned -- contradiction detection (CKN) |
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
