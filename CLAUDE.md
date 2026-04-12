@@ -1,4 +1,4 @@
-# CLAUDE.md -- AI Assistant Guide for sandclaw-memory
+# CLAUDE.md = AI Assistant Guide for sandclaw-memory
 
 > This file helps AI coding assistants (Claude Code, Cursor, Copilot, etc.)
 > understand how to use and work with the sandclaw-memory library.
@@ -19,7 +19,7 @@ from sandclaw_memory import BrainMemory
 
 # The developer MUST provide a tag_extractor function.
 # This function calls an AI to extract tags from text.
-# It is the ONLY required callback -- everything else has defaults.
+# It is the ONLY required callback = everything else has defaults.
 def tag_extractor(content: str) -> list[str]:
     # Replace with the developer's preferred AI (OpenAI, Claude, Gemini, etc.)
     # Must return list[str]
@@ -48,16 +48,16 @@ with BrainMemory(
 
 ```
 sandclaw_memory/
-  brain.py       -- BrainMemory: the ONLY class most users need
-  session.py     -- L1: 3-day rolling Markdown logs ({db_path}/logs/)
-  summary.py     -- L2: 30-day AI-generated summary (in-memory)
-  permanent.py   -- L3: SQLite + FTS5 permanent archive ({db_path}/archive.db)
-  dispatcher.py  -- Auto-detects search depth (CASUAL/STANDARD/DEEP)
-  loader.py      -- Budget-aware loading (15KB default, 40/30/30 split)
-  renderer.py    -- Formats memories as Markdown for LLM injection
-  types.py       -- Depth enum, MemoryEntry dataclass
-  exceptions.py  -- SandclawError hierarchy
-  utils.py       -- HookRegistry, now_iso(), truncate(), safe_json_loads()
+  brain.py       = BrainMemory: the ONLY class most users need
+  session.py     = L1: 3-day rolling Markdown logs ({db_path}/logs/)
+  summary.py     = L2: 30-day AI-generated summary (in-memory)
+  permanent.py   = L3: SQLite + FTS5 permanent archive ({db_path}/archive.db)
+  dispatcher.py  = Auto-detects search depth (CASUAL/STANDARD/DEEP)
+  loader.py      = Budget-aware loading (15KB default, 40/30/30 split)
+  renderer.py    = Formats memories as Markdown for LLM injection
+  types.py       = Depth enum, MemoryEntry dataclass
+  exceptions.py  = SandclawError hierarchy
+  utils.py       = HookRegistry, now_iso(), truncate(), safe_json_loads()
 ```
 
 ## Key Concepts to Know
@@ -168,12 +168,12 @@ app = FastAPI(lifespan=lifespan)
 
 ## Important Rules
 
-1. **tag_extractor is REQUIRED** -- passing `None` raises `ConfigurationError`
-2. **Always call `close()` or use `with` statement** -- prevents resource leaks
-3. **Zero external dependencies** -- only Python stdlib + sqlite3
-4. **Thread-safe** -- polling loop and main thread can access the same DB
-5. **FTS5 is optional** -- gracefully falls back to LIKE search if unavailable
-6. **Python 3.9+** -- uses `from __future__ import annotations` for type hints
+1. **tag_extractor is REQUIRED** = passing `None` raises `ConfigurationError`
+2. **Always call `close()` or use `with` statement** = prevents resource leaks
+3. **Zero external dependencies** = only Python stdlib + sqlite3
+4. **Thread-safe** = polling loop and main thread can access the same DB
+5. **FTS5 is optional** = gracefully falls back to LIKE search if unavailable
+6. **Python 3.9+** = uses `from __future__ import annotations` for type hints
 
 ## Development Commands
 

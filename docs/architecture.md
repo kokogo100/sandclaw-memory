@@ -68,11 +68,11 @@ User Application
 
 **Schema**:
 ```sql
-memories       -- content, tags, source, metadata, timestamps
-memories_fts   -- FTS5 virtual table (content + tags)
-tag_index      -- tag → group mapping
-keyword_map    -- keyword → tag mapping (self-growing!)
-tag_queue      -- pending AI extractions
+memories       = content, tags, source, metadata, timestamps
+memories_fts   = FTS5 virtual table (content + tags)
+tag_index      = tag → group mapping
+keyword_map    = keyword → tag mapping (self-growing!)
+tag_queue      = pending AI extractions
 ```
 
 ## Self-Growing Tag Pipeline

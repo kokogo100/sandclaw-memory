@@ -142,7 +142,7 @@ print(brain.get_tag_stats())
 
 ## Kick 5: Callback Integration Comparison
 
-### OpenAI (gpt-4o-mini) -- Cheapest
+### OpenAI (gpt-4o-mini) = Cheapest
 
 ```python
 import json, openai
@@ -162,7 +162,7 @@ def tag_extractor(content: str) -> list[str]:
 brain = BrainMemory(tag_extractor=tag_extractor)
 ```
 
-### Claude (Haiku 4.5) -- Most Nuanced
+### Claude (Haiku 4.5) = Most Nuanced
 
 ```python
 import json, anthropic
@@ -182,7 +182,7 @@ def tag_extractor(content: str) -> list[str]:
 brain = BrainMemory(tag_extractor=tag_extractor)
 ```
 
-### LangChain -- Framework Integration
+### LangChain = Framework Integration
 
 ```python
 import json
@@ -198,7 +198,7 @@ def tag_extractor(content: str) -> list[str]:
 brain = BrainMemory(tag_extractor=tag_extractor)
 ```
 
-### Local AI (Ollama) -- Zero Cloud Cost
+### Local AI (Ollama) = Zero Cloud Cost
 
 ```python
 import json, requests
@@ -288,7 +288,7 @@ context = brain.recall("which clients need attention?", depth="deep")
 > I built a self-growing RAG library that gets cheaper the more you use it. Zero dependencies, runs on a $200 laptop. MIT licensed.
 
 **For Hacker News:**
-> Show HN: sandclaw-memory -- Self-growing tag-dictionary RAG (zero deps, no GPU)
+> Show HN: sandclaw-memory = Self-growing tag-dictionary RAG (zero deps, no GPU)
 
 **For Dev.to:**
 > How I Built an AI Memory System That Gets Cheaper Over Time (and why vector databases weren't the answer)
@@ -301,7 +301,7 @@ context = brain.recall("which clients need attention?", depth="deep")
 > Vector DBs are great for semantic search at scale. But for personal/app memory (< 100K entries), FTS5 with BM25 gives comparable results with zero infrastructure. No Docker, no GPU, no monthly bill. And our self-growing tags mean the system understands your domain vocabulary over time.
 
 **"How is this different from mem0?"**
-> mem0 uses embeddings (requires an API key always). sandclaw-memory uses a self-growing tag dictionary -- it learns your vocabulary and needs fewer AI calls over time. Also zero external dependencies.
+> mem0 uses embeddings (requires an API key always). sandclaw-memory uses a self-growing tag dictionary = it learns your vocabulary and needs fewer AI calls over time. Also zero external dependencies.
 
 **"Does this scale?"**
 > SQLite handles millions of rows. FTS5 searches 100K memories in < 5ms. For most AI apps (chatbots, agents, personal assistants), this is more than enough.

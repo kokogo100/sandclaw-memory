@@ -52,26 +52,26 @@ ruff check --fix sandclaw_memory/
 
 ## Pull Request Guidelines
 
-1. **One feature per PR** -- keep changes focused
-2. **Add tests** -- all new code should have tests
+1. **One feature per PR** = keep changes focused
+2. **Add tests** = all new code should have tests
 3. **Run the full test suite** before submitting
 4. **Update docstrings** if you change public API
-5. **No new dependencies** -- zero-dependency is a core principle
+5. **No new dependencies** = zero-dependency is a core principle
 
 ## Architecture
 
 ```
 sandclaw_memory/
-  brain.py       -- BrainMemory (orchestrator)
-  session.py     -- L1 SessionMemory (3-day Markdown)
-  summary.py     -- L2 SummaryMemory (30-day AI summary)
-  permanent.py   -- L3 ArchiveMemory (SQLite + FTS5)
-  dispatcher.py  -- IntentDispatcher (depth detection)
-  loader.py      -- TieredLoader (budget-aware loading)
-  renderer.py    -- MarkdownRenderer (output formatting)
-  types.py       -- Depth enum, MemoryEntry dataclass
-  exceptions.py  -- Custom exception hierarchy
-  utils.py       -- HookRegistry, helpers
+  brain.py       = BrainMemory (orchestrator)
+  session.py     = L1 SessionMemory (3-day Markdown)
+  summary.py     = L2 SummaryMemory (30-day AI summary)
+  permanent.py   = L3 ArchiveMemory (SQLite + FTS5)
+  dispatcher.py  = IntentDispatcher (depth detection)
+  loader.py      = TieredLoader (budget-aware loading)
+  renderer.py    = MarkdownRenderer (output formatting)
+  types.py       = Depth enum, MemoryEntry dataclass
+  exceptions.py  = Custom exception hierarchy
+  utils.py       = HookRegistry, helpers
 ```
 
 ## Reporting Issues

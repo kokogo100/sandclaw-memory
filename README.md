@@ -38,7 +38,7 @@ context = brain.recall("what does the user like?")
 | **Dependencies** | 0 (stdlib only) | Many | Several |
 | **Size** | ~50KB | 100MB+ Docker | ~5MB |
 
-> **Why tags instead of vectors?** Vector embeddings are powerful but opaque -- when a wrong result appears, you can't explain why. sandclaw-memory uses AI-powered tag extraction, so the AI understands synonyms and context (e.g., "vehicle" and "car" get the same tag), while every result is traceable to human-readable tags. Same semantic understanding, zero infrastructure, and you can debug it.
+> **Why tags instead of vectors?** Vector embeddings are powerful but opaque. When a wrong result appears, you can't explain why. sandclaw-memory uses AI-powered tag extraction, so the AI understands synonyms and context (e.g., "vehicle" and "car" get the same tag), while every result is traceable to human-readable tags. Same semantic understanding, zero infrastructure, and you can debug it.
 
 ### The Self-Growing Advantage
 
