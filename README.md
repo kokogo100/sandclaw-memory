@@ -43,10 +43,10 @@ context = brain.recall("what does the user like?")
 Traditional RAG calls AI for **every** search. sandclaw-memory learns:
 
 ```
-Day 1:  "React로 페이지 만듦"  → AI extracts: [react, frontend, page]
-         keyword_map registers: "React" → react, "페이지" → page
+Day 1:  "Built a page with React"  → AI extracts: [react, frontend, page]
+         keyword_map registers: "React" → react, "page" → page
 
-Day 30: "React Native 시작"   → keyword_map instant match! No AI needed.
+Day 30: "React Native app"        → keyword_map instant match! No AI needed.
          Cost: $0.00
 
 Day 90: 80% of saves match keyword_map → AI calls reduced by 80%
