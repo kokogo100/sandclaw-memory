@@ -294,10 +294,7 @@ class BrainMemory:
             # Returns: Markdown with session + summary + archive results
         """
         # ─── Detect depth ───
-        if depth is not None:
-            detected = Depth(depth.lower())
-        else:
-            detected = self._dispatcher.detect(query)
+        detected = Depth(depth.lower()) if depth is not None else self._dispatcher.detect(query)
 
         # ─── Load from layers ───
         result = self._loader.load(
@@ -588,20 +585,23 @@ class BrainMemory:
             Restores session data (L1) and archive entries (L3)
             from a previous export_json() output.
         """
+        parsed: dict[str, Any]
         if isinstance(data, str):
             text = Path(data).read_text(encoding="utf-8")
-            data = json.loads(text)
+            parsed = json.loads(text)
+        else:
+            parsed = data
 
         count = 0
 
         # Import session data (L1)
-        if "session" in data:
-            self._session.import_data(data["session"])
+        if "session" in parsed:
+            self._session.import_data(parsed["session"])
             count += 1
 
         # Import archive entries (L3)
-        if "archive" in data:
-            for entry in data["archive"]:
+        if "archive" in parsed:
+            for entry in parsed["archive"]:
                 mem_id = self._archive.save(
                     content=entry.get("content", ""),
                     content_type=entry.get("content_type", "general"),

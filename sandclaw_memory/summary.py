@@ -180,7 +180,11 @@ class SummaryMemory:
         self._cached_summary = summary
         self._cached_at = now_iso()
 
-        logger.info("Generated %d-day summary (%d chars)", collected_data.get("days", 30), len(summary))
+        logger.info(
+            "Generated %d-day summary (%d chars)",
+            collected_data.get("days", 30),
+            len(summary),
+        )
         return summary
 
     def get_summary(self) -> str:

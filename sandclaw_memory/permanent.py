@@ -158,12 +158,15 @@ CREATE TRIGGER IF NOT EXISTS memories_ai AFTER INSERT ON memories BEGIN
 END;
 
 CREATE TRIGGER IF NOT EXISTS memories_ad AFTER DELETE ON memories BEGIN
-    INSERT INTO memories_fts(memories_fts, rowid, content, tags) VALUES('delete', old.id, old.content, old.tags);
+    INSERT INTO memories_fts(memories_fts, rowid, content, tags)
+    VALUES('delete', old.id, old.content, old.tags);
 END;
 
 CREATE TRIGGER IF NOT EXISTS memories_au AFTER UPDATE ON memories BEGIN
-    INSERT INTO memories_fts(memories_fts, rowid, content, tags) VALUES('delete', old.id, old.content, old.tags);
-    INSERT INTO memories_fts(rowid, content, tags) VALUES (new.id, new.content, new.tags);
+    INSERT INTO memories_fts(memories_fts, rowid, content, tags)
+    VALUES('delete', old.id, old.content, old.tags);
+    INSERT INTO memories_fts(rowid, content, tags)
+    VALUES (new.id, new.content, new.tags);
 END;
 """
 
@@ -479,7 +482,9 @@ class ArchiveMemory:
             conn = self._get_conn()
             try:
                 rows = conn.execute(
-                    "SELECT * FROM memories WHERE content_type = ? ORDER BY created_at DESC LIMIT ?",
+                    "SELECT * FROM memories"
+                    " WHERE content_type = ?"
+                    " ORDER BY created_at DESC LIMIT ?",
                     (content_type, limit),
                 ).fetchall()
                 return [self._row_to_entry(r) for r in rows]

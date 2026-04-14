@@ -29,6 +29,10 @@ from __future__ import annotations
 
 import logging
 
+from sandclaw_memory.brain import BrainMemory
+from sandclaw_memory.exceptions import SandclawError
+from sandclaw_memory.types import Depth, MemoryEntry
+
 # ─── NullHandler ───
 # WHY: Libraries should NEVER configure logging for the developer.
 # NullHandler means: "I produce log messages, but I won't print them
@@ -53,15 +57,6 @@ try:
 except Exception:
     # Not installed as a package (e.g. running from source)
     __version__ = "0.0.0-dev"
-
-# ─── Public API ───
-# These are the ONLY things you should import from sandclaw_memory.
-# Everything else is internal and may change without notice.
-# ──────────────────
-from sandclaw_memory.exceptions import SandclawError
-from sandclaw_memory.types import Depth, MemoryEntry
-
-from sandclaw_memory.brain import BrainMemory
 
 __all__ = [
     "BrainMemory",
